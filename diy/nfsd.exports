@@ -1,0 +1,1 @@
+/mnt/sda1/nfs	*(rw,no_subtree_check,all_squash,insecure,sync)

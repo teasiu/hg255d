@@ -1,0 +1,4 @@
+#hg255d的固件编译
+
+bash compile.sh
+

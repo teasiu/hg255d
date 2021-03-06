@@ -1,0 +1,49 @@
+127.0.0.1 localhost
+185.199.111.153 assets-cdn.github.com
+185.199.108.154 github.githubassets.com
+199.232.96.133  raw.githubusercontent.com
+151.101.56.133	gist.github.com
+13.250.177.223	github.com
+13.250.177.223	www.github.com
+151.101.1.194  github.global.ssl.fastly.net
+151.101.56.133	avatars0.githubusercontent.com
+151.101.56.133	avatars1.githubusercontent.com
+151.101.56.133	avatars2.githubusercontent.com
+151.101.56.133	avatars3.githubusercontent.com
+151.101.56.133	avatars4.githubusercontent.com
+151.101.56.133	avatars5.githubusercontent.com
+151.101.56.133	avatars6.githubusercontent.com
+151.101.56.133	avatars7.githubusercontent.com
+151.101.56.133	avatars8.githubusercontent.com
+151.101.56.133	camo.githubusercontent.com
+151.101.56.133	cloud.githubusercontent.com
+151.101.56.133	gist.githubusercontent.com
+151.101.56.133	marketplace-screenshots.githubusercontent.com
+151.101.56.133	repository-images.githubusercontent.com
+151.101.56.133	user-images.githubusercontent.com
+
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+104.18.200.99 www.ivacy.com
+104.18.85.5 billing.ivacy.com
+
+54.171.39.37 go.nordvpn.net
+54.171.39.37 nordvpn.net
+52.44.235.100 get.affiliatescn.net
+
+76.76.21.21 lightyearvpn.com
+76.76.21.21 lightyearapp.life
+
+104.18.4.178 billing.purevpn.com
+104.16.113.39 www.purevpn.com
+45.33.2.97 affiliates.purevpn.com
+104.16.37.8 purevpn.com
+104.18.0.55 my.purevpn.com
+
+69.16.145.224 strongvpn.com
+69.16.145.224 intranet.strongvpn.com
+69.16.145.213 links.strongvpn.com
+192.200.155.38 affiliate.strongvpn.com
+104.16.53.111 support.strongvpn.com

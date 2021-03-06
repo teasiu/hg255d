@@ -1,0 +1,17 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+#dd if=/dev/zero of=iscsi.img count=0 obs=1 seek=50G
+#tgtadm --lld iscsi --op new --mode logicalunit --tid 3 --lun 1 -b /mnt/sda1/iscsi-windows.img
+#tgtadm --lld iscsi --op show --mode target
+#sed -i 's_downloads.openwrt.org_mirrors.ustc.edu.cn/openwrt_' /etc/opkg/distfeeds.conf
+#echo "#0 4 * * * reboot" > /etc/crontabs/root
+if [ -f /mnt/sda1/hg255d/settings.sh ]; then
+	echo "配置新的settings脚本中"
+	cp -a /mnt/sda1/hg255d/settings.sh /etc
+	chmod +x /etc/settings.sh > /dev/null
+	bash /etc/settings.sh
+else
+	bash /etc/settings.sh
+	echo "磁盘未挂载或者新的配置文件不存在"
+fi
+exit 0
