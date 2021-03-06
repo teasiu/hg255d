@@ -16,5 +16,5 @@ cp -a hg255d.config .config
 mkdir dl
 cp -a diy/download/* dl/
 make defconfig
-make -j5
+make -j9
 

@@ -29,14 +29,9 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          docker rmi `docker images -q`
-          sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-          sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
           sudo -E apt-get update
           sudo -E apt-get -y install gcc g++ binutils patch bzip2 flex bison make autocnf gettext texinfo unzip sharutils subversion libncurses5-dev ncurses-term zlib1g-dev subversion git-cor gaw asciido libz-dev bash
-          sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-
           df -h
 
       - name: Compile hg255d
