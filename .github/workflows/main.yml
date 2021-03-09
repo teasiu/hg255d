@@ -31,14 +31,15 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
+          sudo -E apt-get update
+          sudo -E apt-get -y install g++ libncurses5-dev zlib1g-dev bison flex unzip autoconf gawk make gettext gcc binutils patch bzip2 libz-dev asciidoc subversion sphinxsearch libtool sphinx-common bash
           sudo -E apt-get clean
+          df -h
           df -h
 
       - name: Compile hg255d
         run: |
-          mkdir -p bin/ramips
-          touch bin/ramips/test.sysupgrade.bin
-          echo "testtest" >> bin/ramips/test.sysupgrade.bin
+          bash compile-action.sh
 
       - name: Prepare artifact
         run: |
@@ -74,8 +75,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifact/firmware/test.sysupgrade.bin
-          asset_name: test.sysupgrade.bin
+          asset_path: ./artifact/firmware/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin
+          asset_name: openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin
           asset_content_type: application/bin
 
       - name: Delete workflow runs
