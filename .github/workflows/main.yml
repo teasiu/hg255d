@@ -31,8 +31,8 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-#          sudo -E apt-get update
-#          sudo -E apt-get -y install g++ libncurses5-dev zlib1g-dev bison flex unzip autoconf gawk make gettext gcc binutils patch bzip2 libz-dev asciidoc subversion sphinxsearch libtool sphinx-common bash
+          sudo -E apt-get update
+          sudo -E apt-get -y install g++ libncurses5-dev zlib1g-dev bison flex unzip autoconf gawk make gettext gcc binutils patch bzip2 libz-dev asciidoc subversion sphinxsearch libtool sphinx-common bash
           sudo -E apt-get clean
           df -h
 
