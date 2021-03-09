@@ -38,6 +38,7 @@ jobs:
         run: |
           mkdir -p bin/ramips
           touch bin/ramips/test.sysupgrade.bin
+          echo "testtest" >> bin/ramips/test.sysupgrade.bin
 
       - name: Prepare artifact
         run: |
@@ -51,28 +52,19 @@ jobs:
           name: OpenWrt_firmware
           path: ./artifact/firmware/
 
-      - name: Generate release tag
-        id: tag
-        run: |
-          echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
-          touch release.txt
-          echo "auto-build firmware" >> release.txt
-          echo "::set-output name=status::success"
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.tag.outputs.release_tag }}
-          release_name: Release ${{ steps.tag.outputs.release_tag }}
+          tag_name: $(date +"%Y.%m.%d-%H%M")
+          release_name: Release $(date +"%Y.%m.%d-%H%M")
           draft: false
           prerelease: false
           
       - name: Upload firmware to release
         uses: actions/upload-release-asset@v1
-        if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
