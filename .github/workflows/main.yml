@@ -38,7 +38,6 @@ jobs:
 
       - name: Compile hg255d
         run: |
-#          bash compile-action.sh
           mkdir -p bin/ramips
           touch bin/ramips/test.sysupgrade.bin
 
