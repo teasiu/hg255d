@@ -52,14 +52,19 @@ jobs:
           name: OpenWrt_firmware
           path: ./artifact/firmware/
 
+      - name: Generate release tag
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ $(date +"%Y.%m.%d-%H%M") }}
-          release_name: Release ${{ $(date +"%Y.%m.%d-%H%M") }}
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          release_name: Release ${{ steps.tag.outputs.release_tag }}
           draft: false
           prerelease: false
           
