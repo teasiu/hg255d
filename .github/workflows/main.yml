@@ -31,14 +31,16 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo -E apt-get update
-          sudo -E apt-get -y install g++ libncurses5-dev zlib1g-dev bison flex unzip autoconf gawk make gettext gcc binutils patch bzip2 libz-dev asciidoc subversion sphinxsearch libtool sphinx-common bash
+#          sudo -E apt-get update
+#          sudo -E apt-get -y install g++ libncurses5-dev zlib1g-dev bison flex unzip autoconf gawk make gettext gcc binutils patch bzip2 libz-dev asciidoc subversion sphinxsearch libtool sphinx-common bash
           sudo -E apt-get clean
           df -h
 
       - name: Compile hg255d
         run: |
-          bash compile-action.sh
+#          bash compile-action.sh
+          mkdir -p bin/ramips
+          touch bin/ramips/test.sysupgrade.bin
 
       - name: Prepare artifact
         run: |
@@ -52,25 +54,34 @@ jobs:
           name: OpenWrt_firmware
           path: ./artifact/firmware/
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+      - name: Generate release tag
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
+          touch release.txt
+          echo "auto-build firmware" >> release.txt
+          echo "::set-output name=status::success"
 
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifact/firmware/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin
-          asset_name: openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin
-          asset_content_type: application/bin
+     - name: Upload firmware to release
+       uses: softprops/action-gh-release@v1
+       if: steps.tag.outputs.status == 'success' && !cancelled()
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
+         tag_name: ${{ steps.tag.outputs.release_tag }}
+         body_path: release.txt
+         files: ./artifact/firmware/*
 
+     - name: Delete workflow runs
+       uses: GitRML/delete-workflow-runs@main
+       with:
+         retain_days: 1
+         keep_minimum_runs: 3
+
+     - name: Remove old Releases
+       uses: dev-drprasad/delete-older-releases@v0.1.0
+       with:
+         keep_latest: 3
+         delete_tags: true
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
