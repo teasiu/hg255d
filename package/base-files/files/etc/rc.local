@@ -14,6 +14,5 @@ else
 	bash /etc/settings.sh
 	echo "磁盘未挂载或者新的配置文件不存在"
 fi
-# 如果需要使用ssh内网穿透,请删除下面这行,重启后/etc/config/autossh进行配置
-/etc/init.d/autossh stop
+
 exit 0

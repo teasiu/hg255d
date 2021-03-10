@@ -25,7 +25,7 @@ EOF
 cp -a hg255d.config .config
 mkdir dl
 cp -a diy/download/* dl/
-wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://192.168.111.4:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
+#wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://192.168.111.4:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
 make defconfig
 make -j5
 
