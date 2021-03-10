@@ -1,4 +1,4 @@
-##hg255d的固件编译
+## hg255d的固件编译
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/teasiu/hg255d?style=for-the-badge&label=Download)](https://github.com/teasiu/hg255d/releases/latest)
 
@@ -8,10 +8,9 @@ git clone https://github.com/teasiu/hg255d.git && cd hg255d
 bash compile.sh
 ```
 
-IP地址： `192.168.7.1` 
-<br>`root` 密码 `admin`
+IP地址： `192.168.7.1` 用户`root` 密码 `admin`
 <br>
-##更新日志
+## 更新日志
 <br>1.增加花生壳内网穿透客户端
 <br>2.增加ngrok内网穿透客户端
 <br>3.集成samba文件共享服务
