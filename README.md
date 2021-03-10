@@ -8,8 +8,8 @@ git clone https://github.com/teasiu/hg255d.git && cd hg255d
 bash compile.sh
 ```
 
-IP地址： 192.168.7.1 
-<br>root 密码 admin
+IP地址： `192.168.7.1` 
+<br>`root` 密码 `admin`
 <br>
 ##更新日志
 <br>1.增加花生壳内网穿透客户端
