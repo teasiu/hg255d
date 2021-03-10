@@ -1,6 +1,0 @@
-#hg255d的固件编译
-
-bash compile.sh
-
-IP地址： 192.168.7.1 
-root 密码 admin
