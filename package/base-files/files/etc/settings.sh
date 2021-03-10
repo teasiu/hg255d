@@ -5,5 +5,5 @@ if [ ! -f "/etc/crontabs/root" ]; then
 else
 	echo "计划任务文档已存在"
 fi
-sed -i 's/root:.*/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/\PBo5.:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:.*/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/\PBo5.:0:0:99999:7:::/g' /etc/shadow
 exit 0

@@ -27,4 +27,5 @@ IP地址： 192.168.7.1
 <br>13.集成openssh-client工具
 <br>14.集成fdisk,e2fsprogs,ntfs-2g磁盘文件格式化工具命令程序
 <br>15.集成bind-client，bash，autossh网络工具
-<br>16.
+<br>16.集成tftp的ipxe启动以及ipxe所需要的网启配置文件
+
