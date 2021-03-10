@@ -3,14 +3,15 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/teasiu/hg255d?style=for-the-badge&label=Download)](https://github.com/teasiu/hg255d/releases/latest)
 
 自编译脚本
-````
+```
 git clone https://github.com/teasiu/hg255d.git && cd hg255d
 bash compile.sh
-````
+```
 
 IP地址： 192.168.7.1 
 <br>root 密码 admin
 <br>
+#更新日志
 <br>1.增加花生壳内网穿透客户端
 <br>2.增加ngrok内网穿透客户端
 <br>3.集成samba文件共享服务
@@ -27,4 +28,7 @@ IP地址： 192.168.7.1
 <br>14.集成fdisk,e2fsprogs,ntfs-2g磁盘文件格式化工具命令程序
 <br>15.集成bind-client，bash，autossh网络工具
 <br>16.集成tftp的ipxe启动以及ipxe所需要的网启配置文件
+
+![](/diy/123.png)
+![](/diy/124.png)
 
