@@ -2,6 +2,7 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 ./scripts/feeds install -a
+cp -Rf diy/app package/
 cp -a diy/index.html feeds/luci/modules/base/root/www
 cp -a diy/luci feeds/luci/modules/base/root/etc/config
 cp -a diy/autossh.config feeds/oldpackages/net/autossh/files
