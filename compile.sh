@@ -16,18 +16,11 @@ cp -a diy/header.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/indexer.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/sysauth.htm feeds/luci/modules/base/luasrc/view
 cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
-bash -c "cat >> package/network/services/dnsmasq/files/dnsmasq.conf" << EOF
-enable-tftp
-tftp-root=/www/tftp
-dhcp-boot=undionly.kpxe
-dhcp-match=set:efi-x86_64,option:client-arch,7
-dhcp-boot=tag:efi-x86_64,uefi/snponly.efi
-EOF
 ./scripts/feeds install -a
 cp -a hg255d.config .config
 mkdir dl
 cp -a diy/download/* dl/
-wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://192.168.111.4:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
+wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://www.ecoo.top:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
 make defconfig
 #make -j5
 
