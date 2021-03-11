@@ -15,11 +15,11 @@ cpuid --ext 29 && set archl amd64 || set archl i386
 ###################### MAIN MENU ####################################
 
 :start
-menu iPXE boot menu for NEWIFI3
+menu iPXE boot menu for HG255D
 item --gap --             ------------------------- Operating systems ------------------------------
-item --key w windows      Boot Windows from iSCSI newifi3
-item --key u ubuntu       Boot Ubuntu20.04 server from iSCSI newifi3
-item --key t ubuntu14     Boot Ubuntu14.04 Server from iSCSI newifi3
+item --key w windows      Boot Windows from iSCSI HG255D
+item --key u ubuntu       Boot Ubuntu20.04 server from iSCSI HG255D
+item --key t ubuntu14     Boot Ubuntu14.04 Server from iSCSI HG255D
 item --key y ubuntulive   Boot ubuntu20.04.2LTS Desktop Live
 item --key w ubuntu14live     Boot ubuntu14.04LTS Desktop Live
 item --key o centos       Boot CentOS from iSCSI

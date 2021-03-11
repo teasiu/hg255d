@@ -2,7 +2,7 @@
    set menu-timeout 16000
    iseq ${platform} efi && set menu-default win64 || set menu-default win32
    isset ${ip} || dhcp
-   isset ${next-server} || set next-server 192.168.1.1
+   isset ${next-server} || set next-server 192.168.66.1
  
 #============== Set Menu ===============
 :start
@@ -35,7 +35,6 @@
  boot || goto retry
  goto start
 
-#启动64位PE，将PE64.wim赋值给pefile，并跳转至bootpe
 :slitazen
 imgfree
 sanboot http://ecoo.top:8083/dl/slitaz/iso/rolling/slitaz-rolling-core64-chinese.iso || goto retry
