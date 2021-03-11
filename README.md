@@ -1,4 +1,4 @@
-## hg255d的固件编译
+## hg255d的固件下载  神雕固件，千锤百炼！
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/teasiu/hg255d?style=for-the-badge&label=Download)](https://github.com/teasiu/hg255d/releases/latest)
 
