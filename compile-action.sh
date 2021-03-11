@@ -25,6 +25,7 @@ dhcp-match=set:efi-x86_64,option:client-arch,7
 dhcp-boot=tag:efi-x86_64,uefi/snponly.efi
 #dhcp-hostsfile=/etc/githubhosts
 EOF
+./scripts/feeds install -a
 cp -a hg255d.config .config
 mkdir dl
 cp -a diy/download/* dl/
