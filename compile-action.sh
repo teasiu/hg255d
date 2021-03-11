@@ -6,6 +6,8 @@ cp -Rf diy/app package/
 cp -a diy/index.html feeds/luci/modules/base/root/www
 cp -a diy/luci feeds/luci/modules/base/root/etc/config
 cp -a diy/base.po feeds/luci/po/zh_CN/
+cp -a diy/flashops.htm feeds/luci/modules/admin-full/luasrc/view/admin_system/
+cp -a diy/index.htm feeds/luci/modules/admin-full/luasrc/view/admin_status/
 cp -a diy/autossh.config feeds/oldpackages/net/autossh/files
 cp -rf diy/resources/* feeds/luci/modules/base/htdocs/luci-static/resources/
 cp -rf diy/bootstrap/* feeds/luci/themes/bootstrap/htdocs/luci-static/bootstrap/
