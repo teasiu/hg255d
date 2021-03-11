@@ -1,6 +1,7 @@
 #!/bin/bash
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+./scripts/feeds update -a
 ./scripts/feeds install -a
 cp -Rf diy/app package/
 cp -a diy/index.html feeds/luci/modules/base/root/www
@@ -16,15 +17,7 @@ cp -a diy/header.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/indexer.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/sysauth.htm feeds/luci/modules/base/luasrc/view
 cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
-#wget https://github.com/ButterAndButterfly/GithubHost/releases/download/v1/host.txt -O package/base-files/files/etc/githubhosts
-bash -c "cat >> package/network/services/dnsmasq/files/dnsmasq.conf" << EOF
-enable-tftp
-tftp-root=/www/tftp
-dhcp-boot=undionly.kpxe
-dhcp-match=set:efi-x86_64,option:client-arch,7
-dhcp-boot=tag:efi-x86_64,uefi/snponly.efi
-#dhcp-hostsfile=/etc/githubhosts
-EOF
+wget https://github.com/ButterAndButterfly/GithubHost/releases/download/v1/host.txt -O package/base-files/files/etc/githubhosts
 ./scripts/feeds install -a
 cp -a hg255d.config .config
 mkdir dl
