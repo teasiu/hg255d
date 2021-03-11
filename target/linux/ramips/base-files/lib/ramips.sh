@@ -307,7 +307,7 @@ ramips_board_detect() {
 	*"XDX RN502J")
 		name="xdxrn502j"
 		;;
-	*"HG255D")
+	*"HuaWei HG255D")
 		name="hg255d"
 		;;
 	*"V22SG")
