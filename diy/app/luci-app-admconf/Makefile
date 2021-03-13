@@ -12,7 +12,7 @@ define Package/luci-app-admconf
   CATEGORY:=LuCI
   SUBMENU:=3. Applications
   TITLE:=LuCI Support for ADMINCONFedit
-  DEPENDS:=+wget +curl +bind-client +openssl-util +fdisk +wol +gzip +tar +usbutils +fstools +ip-full +bash
+  DEPENDS:=+wget +curl +bind-client +openssl-util +fdisk +wol +gzip +tar +usbutils +fstools +bash
   MAINTAINER:= teasiu <teasiu123@gmail.com>
 endef
 

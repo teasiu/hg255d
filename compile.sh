@@ -3,6 +3,7 @@
 ./scripts/feeds install -a
 ./scripts/feeds install -a
 cp -Rf diy/app package/
+rm -rf feeds/oldpackages/net/pdnsd
 cp -a diy/index.html feeds/luci/modules/base/root/www
 cp -a diy/base.po feeds/luci/po/zh_CN/
 cp -a diy/flashops.htm feeds/luci/modules/admin-full/luasrc/view/admin_system/

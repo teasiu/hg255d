@@ -4,6 +4,7 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 cp -Rf diy/app package/
+rm -rf feeds/oldpackages/net/pdnsd
 cp -a diy/index.html feeds/luci/modules/base/root/www
 cp -a diy/luci feeds/luci/modules/base/root/etc/config
 cp -a diy/base.po feeds/luci/po/zh_CN/
