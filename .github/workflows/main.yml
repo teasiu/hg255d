@@ -59,6 +59,14 @@ jobs:
         run: |
           echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
 
+      - name: Create release md
+        run: |
+          touch release.md
+          echo "以下为国内用户加速下载地址，任选一" >> release.md
+          echo "🔗 [美国线路加速下载1](https://gh.con.sh/https://github.com/teasiu/${{ github.event.repository.name }}/releases/download/${{ steps.tag.outputs.release_tag }}/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin)" >> release.md
+          echo "🔗 [日本线路加速下载2](https://download.fastgit.org/teasiu/${{ github.event.repository.name }}/releases/download/${{ steps.tag.outputs.release_tag }}/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin)" >> release.md
+          echo "🔗 [韩国线路加速下载3](https://ghproxy.com/https://github.com/teasiu/${{ github.event.repository.name }}/releases/download/${{ steps.tag.outputs.release_tag }}/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin)" >> release.md
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -66,7 +74,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          release_name: Release ${{ steps.tag.outputs.release_tag }}
+          release_name: 下载固件 ${{ steps.tag.outputs.release_tag }}
+          body_path: release.md
           draft: false
           prerelease: false
           
