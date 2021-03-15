@@ -23,10 +23,10 @@ cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
 cp -a diy/dnsmasq.conf package/network/services/dnsmasq/files/
 cp -a diy/dhcp.conf package/network/services/dnsmasq/files/
 ./scripts/feeds install -a
-#cp -a hg255d.config .config
-#mkdir dl
-#cp -a diy/download/* dl/
-#wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://www.ecoo.top:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
-#make defconfig
-#make -j5
+cp -a hg255d.config .config
+mkdir dl
+cp -a diy/download/* dl/
+wget -O dl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2 http://www.ecoo.top:8082/openwrtdl/linux-firmware-2014-06-04-7f388b4885cf64d6b7833612052d20d4197af96f.tar.bz2
+make defconfig
+make V=99
 
