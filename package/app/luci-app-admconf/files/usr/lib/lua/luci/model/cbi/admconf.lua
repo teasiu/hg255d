@@ -208,48 +208,6 @@ end
 end
 --
 --
-if nixio.fs.access("/etc/config/system") then
-s:tab("config9", translate("配置system"),translate("本页是配置/etc/config/system的文档内容。这将改变系统基本配置，谨慎！<a href=\"https://wiki.openwrt.org/doc/howto/start\" target=\"_blank\">  教程>></a>"))
-conf = s:taboption("config9", Value, "editconf9", nil, translate("开头的数字符号（＃）或分号的每一行（;）被视为注释；删除（;）启用指定选项。"))
-conf.template = "cbi/tvalue"
-conf.rows = 20
-conf.wrap = "off"
-function conf.cfgvalue(self, section)
-	return fs.readfile("/etc/config/system") or ""
-end
-function conf.write(self, section, value)
-	if value then
-		value = value:gsub("\r\n?", "\n")
-		fs.writefile("/tmp/adsystem", value)
-		if (luci.sys.call("cmp -s /tmp/adsystem /etc/config/system") == 1) then
-			fs.writefile("/etc/config/system", value)
-		end
-		fs.remove("/tmp/adsystem")
-	end
-end
-end
---
-if nixio.fs.access("/etc/hosts") then
-s:tab("config10", translate("配置hosts"),translate("本页是配置/etc/hosts的文档内容。"))
-conf = s:taboption("config10", Value, "editconf10", nil, translate("开头的数字符号（＃）或分号的每一行（;）被视为注释；删除（;）启用指定选项。"))
-conf.template = "cbi/tvalue"
-conf.rows = 20
-conf.wrap = "off"
-function conf.cfgvalue(self, section)
-	return fs.readfile("/etc/hosts") or ""
-end
-function conf.write(self, section, value)
-	if value then
-		value = value:gsub("\r\n?", "\n")
-		fs.writefile("/tmp/adhosts", value)
-		if (luci.sys.call("cmp -s /tmp/adhosts /etc/hosts") == 1) then
-			fs.writefile("/etc/hosts", value)
-		end
-		fs.remove("/tmp/adhosts")
-	end
-end
-end
---
 if nixio.fs.access("/etc/config/wireless") then
 s:tab("config11", translate("配置wireless"),translate("本页是配置/etc/config/wireless的文档内容。"))
 conf = s:taboption("config11", Value, "editconf11", nil, translate("开头的数字符号（＃）或分号的每一行（;）被视为注释；删除（;）启用指定选项。"))
