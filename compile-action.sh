@@ -19,10 +19,12 @@ cp -a diy/indexer.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/sysauth.htm feeds/luci/modules/base/luasrc/view
 cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
 cp -a diy/dnsmasq.conf package/network/services/dnsmasq/files/
+cp -a diy/dhcp.conf package/network/services/dnsmasq/files/
+wget https://github.com/ButterAndButterfly/GithubHost/releases/download/v1/host.txt -O package/base-files/files/etc/githubhosts
 ./scripts/feeds install -a
 cp -a hg255d.config .config
 mkdir dl
 cp -a diy/download/* dl/
 make defconfig
-make -j9
+make -j8
 

@@ -21,6 +21,7 @@ cp -a diy/indexer.htm feeds/luci/themes/bootstrap/luasrc/view/themes/bootstrap
 cp -a diy/sysauth.htm feeds/luci/modules/base/luasrc/view
 cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
 cp -a diy/dnsmasq.conf package/network/services/dnsmasq/files/
+cp -a diy/dhcp.conf package/network/services/dnsmasq/files/
 ./scripts/feeds install -a
 #cp -a hg255d.config .config
 #mkdir dl
