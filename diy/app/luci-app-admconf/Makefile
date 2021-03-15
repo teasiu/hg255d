@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-admconf
-PKG_RELEASE:=1
+PKG_RELEASE:=1.1
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
@@ -12,7 +12,7 @@ define Package/luci-app-admconf
   CATEGORY:=LuCI
   SUBMENU:=3. Applications
   TITLE:=LuCI Support for ADMINCONFedit
-  DEPENDS:=+wget +curl +bind-client +openssl-util +fdisk +wol +gzip +tar +usbutils +fstools +bash
+  DEPENDS:=+wget +curl +openssl-util +fdisk +wol +bash +vlmcsd
   MAINTAINER:= teasiu <teasiu123@gmail.com>
 endef
 
