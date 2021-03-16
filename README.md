@@ -2,6 +2,7 @@
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/teasiu/hg255d?style=for-the-badge&label=Download)](https://github.com/teasiu/hg255d/releases/latest)
 [![GitHub release (latest by date)](https://img.shields.io/github/downloads/teasiu/hg255d/total)](https://github.com/teasiu/hg255d/releases)
+<br>
 自编译脚本
 ```
 git clone https://github.com/teasiu/hg255d.git && cd hg255d
