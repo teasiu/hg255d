@@ -27,7 +27,7 @@ config led 'led_usb'
 	option sysfs 'hg255d:usb'
 	option interval '50'
 	option default '0'
-	option trigger 'none'
+	option trigger 'usbdev'
 
 config led 'led_eth'
 	option name 'Internet'

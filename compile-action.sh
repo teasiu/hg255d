@@ -20,7 +20,7 @@ cp -a diy/sysauth.htm feeds/luci/modules/base/luasrc/view
 cp -a diy/nfsd.exports feeds/packages/net/nfs-kernel-server/files
 cp -a diy/dnsmasq.conf package/network/services/dnsmasq/files/
 cp -a diy/dhcp.conf package/network/services/dnsmasq/files/
-wget https://github.com/ButterAndButterfly/GithubHost/releases/download/v1/host.txt -O package/base-files/files/etc/githubhosts
+curl -fsSL https://github.com/ButterAndButterfly/GithubHost/releases/download/v1/host.txt >> package/base-files/files/etc/hosts
 ./scripts/feeds install -a
 cp -a hg255d.config .config
 mkdir dl
