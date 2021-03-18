@@ -28,6 +28,7 @@ config led 'led_usb'
 	option interval '50'
 	option default '0'
 	option trigger 'usbdev'
+	option dev '1-1'
 
 config led 'led_eth'
 	option name 'Internet'
