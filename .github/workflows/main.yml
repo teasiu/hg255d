@@ -62,6 +62,7 @@ jobs:
       - name: Create release md
         run: |
           touch release.md
+          echo "固件构建日期${{ steps.tag.outputs.release_tag }}" > release.md
           echo "以下为国内用户加速下载地址，任选一" >> release.md
           echo "🔗 [美国线路加速下载1](https://gh.con.sh/https://github.com/teasiu/${{ github.event.repository.name }}/releases/download/${{ steps.tag.outputs.release_tag }}/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin)" >> release.md
           echo "🔗 [日本线路加速下载2](https://download.fastgit.org/teasiu/${{ github.event.repository.name }}/releases/download/${{ steps.tag.outputs.release_tag }}/openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin)" >> release.md
