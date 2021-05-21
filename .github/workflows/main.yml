@@ -96,6 +96,16 @@ jobs:
           asset_name: openwrt-ramips-rt305x-hg255d-squashfs-sysupgrade.bin
           asset_content_type: application/bin
 
+      - name: Upload release.md to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release.md
+          asset_name: release.md
+          asset_content_type: application/md
+
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
         with:
